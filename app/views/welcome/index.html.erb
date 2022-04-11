@@ -1,0 +1,21 @@
+<h1>Bem Vindo a Nova 99Hunters</h1>
+<br>
+<h1>Somos a Maior Rede de Headhunters do Mundo!!!</h1>
+<hr>
+<ul>
+  <% if current_usuario.present?%>
+  <li><%= current_usuario.nome %></li>
+  <br>
+  <br>
+  <li><%= link_to 'Perfil', meu_perfil_usuarios_path %></li>
+
+  <li><%= link_to 'Vagas', vagas_path	 %></li>
+  <br>
+  <li><%= link_to 'SAIR', destroy_usuario_session_path, method: :delete	 %></li>
+  <% else %>
+  <br>
+  <br>
+  <li><%= link_to 'ACESSAR', new_usuario_session_path	 %></li>
+  <% end %>
+
+</ul>

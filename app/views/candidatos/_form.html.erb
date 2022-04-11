@@ -1,0 +1,42 @@
+<%= form_with(model: candidato, local: true, url: "/vagas/#{@vaga.id}/candidatos/#{@candidato.id}") do |form| %>
+  <% if candidato.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(candidato.errors.count, "error") %> prohibited this candidato from being saved:</h2>
+
+      <ul>
+      <% candidato.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome, id: :candidato_nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :candidato_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefone %>
+    <%= form.text_field :telefone, id: :candidato_telefone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :escolaridade %>
+    <%= form.text_field :escolaridade, id: :candidato_escolaridade %>
+  </div>
+
+  <div class="field">
+    <%= form.label :exp_profissional %>
+    <%= form.text_field :exp_profissional, id: :candidato_exp_profissional %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
