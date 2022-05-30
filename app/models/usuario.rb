@@ -5,5 +5,6 @@ class Usuario < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :nome, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
+  validates :telefone, presence: true, uniqueness: true
   has_many :vagas
 end
