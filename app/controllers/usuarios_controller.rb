@@ -4,6 +4,7 @@ class UsuariosController < ApplicationController
   # GET /usuarios or /usuarios.json
   def index
     @usuarios = Usuario.all
+
   end
 
   # GET /usuarios/1 or /usuarios/1.json
@@ -59,12 +60,14 @@ class UsuariosController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_usuario
       @usuario = Usuario.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
+    #strong_parameters
     def usuario_params
       params.require(:usuario).permit(:nome, :data_nascimento, :telefone, :email, :papel)
     end
